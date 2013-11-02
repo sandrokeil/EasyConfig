@@ -1,4 +1,5 @@
 # EasyConfig module for Zend Framework 2
+[![Master branch build status](https://secure.travis-ci.org/sandrokeil/EasyConfig.png?branch=master)](http://travis-ci.org/sandrokeil/EasyConfig) [![Latest Stable Version]
 
 Easy config provides some abstract factories to easily create instances depending on configuration or retrieve specified module options.
 
