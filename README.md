@@ -2,11 +2,11 @@
 
 Easy config provides some abstract factories to easily create instances depending on configuration or retrieve specified module options.
 
-You should have coding conventions and you should have config conventions. If not, you should think about that. 
+You should have coding conventions and you should have config conventions. If not, you should think about that.
 
 With this module config keys should have the following structure `module.scope.name`.  A common configuration looks like that:
 
-```
+```php
 return array(
     'doctrine' => array(
         'connection' => array(

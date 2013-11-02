@@ -1,10 +1,10 @@
 # AbstractConfigFactory
- 
+
  Use this class if you want to retrieve the configuration options and setup your instance manually.
 
 Let's assume we have the following configuration:
 
-```
+```php
 return array(
     'doctrine' => array(
         'connection' => array(
@@ -20,7 +20,7 @@ return array(
 ## Array Options
 Then you have easily access to the `orm_default` options in your createService() method with this factory.
 
-```
+```php
 use Sake\EasyConfig\Service\AbstractConfigFactory;
 
 class MyDBALConnectionFactory extends AbstractConfigFactory
@@ -34,7 +34,7 @@ class MyDBALConnectionFactory extends AbstractConfigFactory
         $params = $options['params'];
 
         // create your instance and set options
-        
+
         return $instance;
     }
 
