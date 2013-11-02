@@ -30,7 +30,7 @@ Put the following into your composer.json
 
     {
         "require": {
-            "sandrokeil/easyconfig": "*"
+            "sandrokeil/easy-config": "*"
         }
     }
 
