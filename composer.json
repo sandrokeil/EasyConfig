@@ -1,0 +1,27 @@
+{
+    "name": "sandrokeil/easy-config",
+    "description": "Easy config provides some abstract factories to easily create instances depending on configuration or retrieve specified module options.",
+    "homepage": "https://github.com/sandrokeil/EasyConfig",
+    "license": "BSD-3-Clause",
+    "type": "library",
+    "keywords": [
+        "zf2",
+        "config",
+        "service",
+        "options"
+    ],
+    "autoload": {
+        "psr-0": {
+            "Sake\\EasyConfig": "src/",
+            "SakeTest\\EasyConfig": "tests/"
+        }
+    },
+    "require": {
+        "php": ">=5.3.3",
+        "zendframework/zend-servicemanager": "~2.2"
+    },
+    "require-dev": {
+        "php": ">=5.3.3",
+        "zendframework/zendframework": "~2.2"
+    }
+}
