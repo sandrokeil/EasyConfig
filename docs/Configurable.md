@@ -1,4 +1,4 @@
-# AbstractConfigFactory
+# AbstractConfigurableFactory
 
  Use this class if you want to retrieve the configuration options and setup your instance manually.
 
@@ -21,9 +21,9 @@ return array(
 Then you have easily access to the `orm_default` options in your createService() method with this factory.
 
 ```php
-use Sake\EasyConfig\Service\AbstractConfigFactory;
+use Sake\EasyConfig\Service\AbstractConfigurableFactory;
 
-class MyDBALConnectionFactory extends AbstractConfigFactory
+class MyDBALConnectionFactory extends AbstractConfigurableFactory
 {
     public function createService(ServiceLocatorInterface $serviceLocator)
     {
@@ -59,7 +59,7 @@ If you implement `OptionClassInterface` then you get a option class. Your option
 ```
 use \Sake\EasyConfig\Service\OptionClassInterface;
 
-class MyDBALConnectionFactory extends AbstractConfigFactory implements OptionClassInterface
+class MyDBALConnectionFactory extends AbstractConfigurableFactory implements OptionClassInterface
 {
     public function createService(ServiceLocatorInterface $serviceLocator)
     {

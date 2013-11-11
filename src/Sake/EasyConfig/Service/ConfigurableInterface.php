@@ -10,11 +10,11 @@
 namespace Sake\EasyConfig\Service;
 
 /**
- * Interface ConfigInterface
+ * Interface ConfigurableInterface
  *
  * Interface to retrieve config options.
  */
-interface ConfigInterface
+interface ConfigurableInterface
 {
     /**
      * Module name

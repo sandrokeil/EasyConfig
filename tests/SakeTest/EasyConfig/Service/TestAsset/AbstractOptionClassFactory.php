@@ -11,6 +11,6 @@ namespace SakeTest\EasyConfig\Service\TestAsset;
 
 use \Sake\EasyConfig\Service;
 
-abstract class AbstractOptionClassFactory extends Service\AbstractConfigFactory implements Service\OptionClassInterface
+abstract class AbstractOptionClassFactory extends Service\AbstractConfigurableFactory implements Service\OptionClassInterface
 {
 }

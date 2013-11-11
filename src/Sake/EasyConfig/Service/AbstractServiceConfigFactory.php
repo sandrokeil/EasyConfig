@@ -18,7 +18,7 @@ use Zend\ServiceManager\AbstractPluginManager;
  *
  * This factory injects another service with module.scope.name via service locator to instance.
  */
-abstract class AbstractServiceConfigFactory implements FactoryInterface, ConfigInterface, ClassNameInterface,
+abstract class AbstractServiceConfigFactory implements FactoryInterface, ConfigurableInterface, ClassNameInterface,
  InjectionMethodInterface
 {
     /**

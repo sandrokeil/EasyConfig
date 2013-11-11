@@ -9,48 +9,30 @@
 
 namespace SakeTest\EasyConfig\Service;
 
-use \Sake\EasyConfig\Service\AbstractOptionConfigFactory;
+use \Sake\EasyConfig\Service\AbstractConstructorOptionConfigFactory;
 
 /**
- * Class AbstractOptionConfigFactory
+ * Class AbstractConstructorOptionConfigFactoryTest
  *
- * Tests integrity of \Sake\EasyConfig\Service\AbstractOptionConfigFactory
+ * Tests integrity of \Sake\EasyConfig\Service\AbstractConstructorOptionConfigFactory
  */
-class AbstractOptionConfigFactoryTest extends \SakeTest\Util\TestCase
+class AbstractConstructorOptionConfigFactoryTest extends \SakeTest\Util\TestCase
 {
     /**
      * Class under test
      *
      * @var string
      */
-    protected $cut = '\Sake\EasyConfig\Service\AbstractOptionConfigFactory';
-
-    /**
-     * Tests createService() should inject options via hydrator
-     *
-     * @covers \Sake\EasyConfig\Service\AbstractOptionConfigFactory::createService
-     * @covers \Sake\EasyConfig\Service\AbstractOptionConfigFactory::getHydrator
-     */
-    public function testCreateServiceWithHydrator()
-    {
-        $stub = $this->getConfigStub('setter', AbstractOptionConfigFactory::INJECTION_TYPE_HYDRATOR);
-
-        /* @var $instance \SakeTest\EasyConfig\Service\TestAsset\OptionConfig */
-        $instance = $stub->createService($this->serviceManager);
-        $this->assertInstanceOf('\SakeTest\EasyConfig\Service\TestAsset\OptionConfig', $instance);
-
-        $this->assertSame('bar', $instance->getBarFoo());
-        $this->assertSame('foo', $instance->getFooBar());
-    }
+    protected $cut = '\Sake\EasyConfig\Service\AbstractConstructorOptionConfigFactory';
 
     /**
      * Tests createService() should inject option via constructor
      *
-     * @covers \Sake\EasyConfig\Service\AbstractOptionConfigFactory::createService
+     * @covers \Sake\EasyConfig\Service\AbstractConstructorOptionConfigFactory::createService
      */
     public function testCreateServiceWithConstructor()
     {
-        $stub = $this->getConfigStub('constructor', AbstractOptionConfigFactory::INJECTION_TYPE_CONSTRUCTOR);
+        $stub = $this->getConfigStub('constructor', AbstractConstructorOptionConfigFactory::INJECTION_TYPE_SINGLE);
 
         /* @var $instance \SakeTest\EasyConfig\Service\TestAsset\OptionConfig */
         $instance = $stub->createService($this->serviceManager);
@@ -63,13 +45,13 @@ class AbstractOptionConfigFactoryTest extends \SakeTest\Util\TestCase
     /**
      * Tests createService() should inject option via constructor
      *
-     * @covers \Sake\EasyConfig\Service\AbstractOptionConfigFactory::createService
+     * @covers \Sake\EasyConfig\Service\AbstractConstructorOptionConfigFactory::createService
      */
     public function testCreateServiceWithConstructorMulti()
     {
         $stub = $this->getConfigStub(
             'constructor_multi',
-            AbstractOptionConfigFactory::INJECTION_TYPE_CONSTRUCTOR_MULTI
+            AbstractConstructorOptionConfigFactory::INJECTION_TYPE_MULTI
         );
 
         /* @var $instance \SakeTest\EasyConfig\Service\TestAsset\OptionConfig */
@@ -84,7 +66,7 @@ class AbstractOptionConfigFactoryTest extends \SakeTest\Util\TestCase
      * Returns configured stub for this test
      *
      * @param string $name Name
-     * @param $type Injectin type
+     * @param int $type Injection type
      * @return \PHPUnit_Framework_MockObject_MockObject
      */
     protected function getConfigStub($name, $type)

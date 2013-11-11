@@ -41,8 +41,9 @@ Then add `Sake\EasyConfig` to your `config/application.config.php`.
 
 You can find documentation about the usages of factories at the following links:
 
- * [Config](https://github.com/sandrokeil/EasyConfig/tree/master/docs/Config.md)
- * [OptionConfig](https://github.com/sandrokeil/EasyConfig/tree/master/docs/OptionConfig.md)
+ * [Configurable](https://github.com/sandrokeil/EasyConfig/tree/master/docs/Configurable.md)
+ * [ConstructorOptionConfig](https://github.com/sandrokeil/EasyConfig/tree/master/docs/ConstructorOptionConfig.md)
+ * [OptionHydratorConfig](https://github.com/sandrokeil/EasyConfig/tree/master/docs/OptionHydratorConfig.md)
  * [ServiceConfig](https://github.com/sandrokeil/EasyConfig/tree/master/docs/ServiceConfig.md)
  * [ServiceManagerConfig](https://github.com/sandrokeil/EasyConfig/tree/master/docs/ServiceManagerConfig.md)
  * [ServiceOptionConfig](https://github.com/sandrokeil/EasyConfig/tree/master/docs/ServiceOptionConfig.md)

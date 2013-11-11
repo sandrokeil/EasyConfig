@@ -9,15 +9,14 @@
 
 namespace Sake\EasyConfig\Service;
 
-use Zend\ServiceManager\FactoryInterface;
 use Zend\ServiceManager\ServiceLocatorInterface;
 
 /**
- * AbstractConfigFactory which retrieves configuration options
+ * AbstractConfigurableFactory which retrieves configuration options
  *
  * Use this class if you want to retrieve the configuration options and setup your instance manually.
  */
-abstract class AbstractConfigFactory implements FactoryInterface, ConfigInterface
+abstract class AbstractConfigurableFactory implements ConfigurableInterface
 {
     /**
      * Gets options from configuration based on module.scope.name.

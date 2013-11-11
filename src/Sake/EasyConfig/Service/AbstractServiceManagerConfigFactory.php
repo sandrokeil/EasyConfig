@@ -9,6 +9,7 @@
 
 namespace Sake\EasyConfig\Service;
 
+use Zend\ServiceManager\FactoryInterface;
 use Zend\ServiceManager\ServiceLocatorInterface;
 use Sake\EasyConfig\Service\Exception;
 
@@ -18,8 +19,8 @@ use Sake\EasyConfig\Service\Exception;
  * This factory injects options to a service manager instance via a service manager config class. This is useful for
  * plugin manager.
  */
-abstract class AbstractServiceManagerConfigFactory extends AbstractConfigFactory implements OptionClassInterface,
- ClassNameInterface
+abstract class AbstractServiceManagerConfigFactory extends AbstractConfigurableFactory implements OptionClassInterface,
+ ClassNameInterface, FactoryInterface
 {
     /**
      * Creates a configured service/plugin manager instance

@@ -10,23 +10,23 @@
 namespace SakeTest\EasyConfig\Service;
 
 /**
- * Class AbstractConfigFactoryTest
+ * Class AbstractConfigurableFactoryTest
  *
- * Tests integrity of \Sake\EasyConfig\Service\AbstractConfigFactory
+ * Tests integrity of \Sake\EasyConfig\Service\AbstractConfigurableFactory
  */
-class AbstractConfigFactoryTest extends \SakeTest\Util\TestCase
+class AbstractConfigurableFactoryTest extends \SakeTest\Util\TestCase
 {
     /**
      * Class under test
      *
      * @var string
      */
-    protected $cut = '\Sake\EasyConfig\Service\AbstractConfigFactory';
+    protected $cut = '\Sake\EasyConfig\Service\AbstractConfigurableFactory';
 
     /**
      * Tests getOptions() should throw exception if no config is available
      *
-     * @covers \Sake\EasyConfig\Service\AbstractConfigFactory::getOptions
+     * @covers \Sake\EasyConfig\Service\AbstractConfigurableFactory::getOptions
      */
     public function testGetOptionsShouldThrowRuntimeExceptionIfNoConfigIsAvailable()
     {
@@ -40,7 +40,7 @@ class AbstractConfigFactoryTest extends \SakeTest\Util\TestCase
     /**
      * Tests getOptions() should throw exception if no option is available
      *
-     * @covers \Sake\EasyConfig\Service\AbstractConfigFactory::getOptions
+     * @covers \Sake\EasyConfig\Service\AbstractConfigurableFactory::getOptions
      */
     public function testGetOptionsShouldThrowRuntimeExceptionIfNoOptionIsAvailable()
     {
@@ -54,7 +54,7 @@ class AbstractConfigFactoryTest extends \SakeTest\Util\TestCase
     /**
      * Tests if getOptions() works as expected
      *
-     * @covers \Sake\EasyConfig\Service\AbstractConfigFactory::getOptions
+     * @covers \Sake\EasyConfig\Service\AbstractConfigurableFactory::getOptions
      */
     public function testGetOptionsShouldReturnExpectedData()
     {
@@ -66,7 +66,7 @@ class AbstractConfigFactoryTest extends \SakeTest\Util\TestCase
     /**
      * Tests if getOptions() works with an option class
      *
-     * @covers \Sake\EasyConfig\Service\AbstractConfigFactory::getOptions
+     * @covers \Sake\EasyConfig\Service\AbstractConfigurableFactory::getOptions
      */
     public function testGetOptionsShouldReturnOptionClass()
     {

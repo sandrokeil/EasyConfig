@@ -9,6 +9,7 @@
 
 namespace Sake\EasyConfig\Service;
 
+use Zend\ServiceManager\FactoryInterface;
 use Zend\ServiceManager\ServiceLocatorInterface;
 
 /**
@@ -16,8 +17,8 @@ use Zend\ServiceManager\ServiceLocatorInterface;
  *
  * This factory injects one or more services (configured in service locator) via a method to instance.
  */
-abstract class AbstractServiceOptionConfigFactory extends AbstractConfigFactory implements InjectionMethodInterface,
- ClassNameInterface
+abstract class AbstractServiceOptionConfigFactory extends AbstractConfigurableFactory implements FactoryInterface,
+ InjectionMethodInterface, ClassNameInterface
 {
     /**
      * Creates a configured instance where a list of services are injected via one method depending on options
@@ -30,8 +31,8 @@ abstract class AbstractServiceOptionConfigFactory extends AbstractConfigFactory 
         $options = $this->getOptions($serviceLocator);
 
         $className = $this->getClassName();
-        $method = $this->getInjectionMethod();
-        $instance = new $className();
+        $method    = $this->getInjectionMethod();
+        $instance  = new $className();
 
         if (is_array($options)) {
             foreach ($options as $service) {
