@@ -1,7 +1,7 @@
 # EasyConfig module for Zend Framework 2
 [![Build Status](https://travis-ci.org/sandrokeil/EasyConfig.png?branch=master)](https://travis-ci.org/sandrokeil/EasyConfig)
-[![Coverage Status](https://coveralls.io/repos/sandrokeil/EasyConfig/badge.png)](https://coveralls.io/r/sandrokeil/EasyConfig)
 [![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/sandrokeil/EasyConfig/badges/quality-score.png?s=cdef161c14156e3e36ed0ce3d6fd7979d38d916c)](https://scrutinizer-ci.com/g/sandrokeil/EasyConfig/)
+[![Code Coverage](https://scrutinizer-ci.com/g/sandrokeil/EasyConfig/badges/coverage.png?s=2637df033bd48a1edb7e2d85e994b26cd4d862a2)](https://scrutinizer-ci.com/g/sandrokeil/EasyConfig/)
 [![Latest Stable Version](https://poser.pugx.org/sandrokeil/easy-config/v/stable.png)](https://packagist.org/packages/sandrokeil/easy-config)
 [![Total Downloads](https://poser.pugx.org/sandrokeil/easy-config/downloads.png)](https://packagist.org/packages/sandrokeil/easy-config)
 

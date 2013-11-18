@@ -11,7 +11,7 @@ before_script:
 
 script:
   - ./vendor/bin/phpunit
-  - ./vendor/bin/phpcs --standard=PSR2 ./src/ ./tests/
+  - ./vendor/bin/phpcs --standard=PSR2 ./src/ ./tests/SakeTest
 
 after_script:
   - php vendor/bin/coveralls -v
