@@ -12,7 +12,7 @@ namespace SakeTest\EasyConfig\Service;
 /**
  * Class AbstractOptionHydratorConfigFactoryTest
  *
- * Tests integrity of \Sake\EasyConfig\Service\AbstractOptionHydratorConfigFactoryTest
+ * Tests integrity of \Sake\EasyConfig\Service\AbstractOptionHydratorConfigFactory
  */
 class AbstractOptionHydratorConfigFactoryTest extends \SakeTest\Util\TestCase
 {

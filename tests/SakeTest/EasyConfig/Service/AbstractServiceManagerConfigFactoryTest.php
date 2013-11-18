@@ -14,7 +14,7 @@ namespace SakeTest\EasyConfig\Service;
  *
  * Tests integrity of \Sake\EasyConfig\Service\AbstractServiceManagerConfigFactory
  */
-class ServiceManagerConfigFactoryTest extends \SakeTest\Util\TestCase
+class AbstractServiceManagerConfigFactoryTest extends \SakeTest\Util\TestCase
 {
     /**
      * Class under test
@@ -109,7 +109,7 @@ class ServiceManagerConfigFactoryTest extends \SakeTest\Util\TestCase
         $stub = parent::getStub($this->cut, $module, $scope, $name);
 
         $stub->expects($this->any())
-            ->method('getOptionClass')
+            ->method('getOptionsClass')
             ->will($this->returnValue($configClass));
 
         return $stub;

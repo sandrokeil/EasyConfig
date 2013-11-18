@@ -24,7 +24,44 @@ return array(
 );
 ```
 So `doctrine` is the module, `connection` is the scope and `orm_default` is the name. After that follows the specified instance options.
+With [AbstractConfigurableFactory](https://github.com/sandrokeil/EasyConfig/tree/master/docs/Configurable.md) we have access to these options easily.
 
+```php
+use Sake\EasyConfig\Service\AbstractConfigurableFactory;
+use Zend\ServiceManager\FactoryInterface;
+use Zend\ServiceManager\ServiceLocatorInterface;
+
+class MyDBALConnectionFactory extends AbstractConfigurableFactory implements FactoryInterface
+{
+    public function createService(ServiceLocatorInterface $serviceLocator)
+    {
+        // get options for doctrine.connection.orm_default
+        $options = $this->getOptions($serviceLocator);
+
+        $driverClass = $options['driverClass'];
+        $params = $options['params'];
+
+        // create your instance and set options
+
+        return $instance;
+    }
+
+    public function getModule()
+    {
+        return 'doctrine';
+    }
+
+    public function getScope()
+    {
+        return 'connection';
+    }
+
+    public function getName()
+    {
+        return 'orm_default';
+    }
+}
+```
 
 ## Installation
 
@@ -35,11 +72,11 @@ Put the following into your composer.json
 
     {
         "require": {
-            "sandrokeil/easy-config": "*"
+            "sandrokeil/easy-config": "dev-master"
         }
     }
 
-Then add `Sake\EasyConfig` to your `config/application.config.php`.
+Then add `Sake\EasyConfig` to your `config/application.config.php` at the first module.
 
 ## Documentation
 

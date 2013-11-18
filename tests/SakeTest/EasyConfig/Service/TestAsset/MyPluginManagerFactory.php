@@ -33,7 +33,7 @@ class MyPluginManagerFactory extends AbstractServiceManagerConfigFactory
         return '\SakeTest\EasyConfig\Service\TestAsset\MyPluginManager';
     }
 
-    public function getOptionClass()
+    public function getOptionsClass()
     {
         return '\SakeTest\EasyConfig\Service\TestAsset\MyPluginManagerOptions';
     }

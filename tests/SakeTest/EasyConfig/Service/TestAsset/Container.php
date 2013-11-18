@@ -9,9 +9,17 @@
 
 namespace SakeTest\EasyConfig\Service\TestAsset;
 
-use \Sake\EasyConfig\Service;
-
-abstract class AbstractOptionClassFactory extends Service\AbstractConfigurableFactory implements
-    Service\OptionsClassInterface
+class Container
 {
+    protected $services = array();
+
+    public function add($service)
+    {
+        $this->services[] = $service;
+    }
+
+    public function getServices()
+    {
+        return $this->services;
+    }
 }

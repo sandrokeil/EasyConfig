@@ -17,9 +17,8 @@ use Zend\ServiceManager\ServiceLocatorInterface;
  *
  * Use this factory for easy dependency injection in your instance via constructor.
  */
-abstract class AbstractConstructorOptionConfigFactory extends AbstractConfigurableFactory implements
-     ClassNameInterface,
-     FactoryInterface
+abstract class AbstractConstructorOptionConfigFactory extends AbstractConfigurableFactory implements ClassNameInterface,
+ FactoryInterface
 {
     /**
      * Injects option via constructor

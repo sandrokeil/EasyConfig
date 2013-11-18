@@ -14,12 +14,12 @@ namespace Sake\EasyConfig\Service;
  *
  * Interface for option class configuration
  */
-interface OptionClassInterface
+interface OptionsClassInterface
 {
     /**
      * Return the option class name (fcqn) where options are injected via constructor
      *
      * @return string
      */
-    public function getOptionClass();
+    public function getOptionsClass();
 }

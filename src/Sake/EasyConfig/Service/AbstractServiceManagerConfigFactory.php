@@ -19,7 +19,7 @@ use Sake\EasyConfig\Service\Exception;
  * This factory injects options to a service manager instance via a service manager config class. This is useful for
  * plugin manager.
  */
-abstract class AbstractServiceManagerConfigFactory extends AbstractConfigurableFactory implements OptionClassInterface,
+abstract class AbstractServiceManagerConfigFactory extends AbstractConfigurableFactory implements OptionsClassInterface,
  ClassNameInterface, FactoryInterface
 {
     /**
@@ -37,7 +37,7 @@ abstract class AbstractServiceManagerConfigFactory extends AbstractConfigurableF
             throw new Exception\RuntimeException(
                 sprintf(
                     'Option class "%s" must implement %s for this factory.',
-                    $this->getOptionClass(),
+                    $this->getOptionsClass(),
                     '\Zend\ServiceManager\ConfigInterface'
                 )
             );

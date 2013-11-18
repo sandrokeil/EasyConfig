@@ -44,8 +44,8 @@ abstract class AbstractConfigurableFactory implements ConfigurableInterface
         $options = $options[$this->getModule()][$this->getScope()][$this->getName()];
 
         // create option class
-        if ($this instanceof OptionClassInterface) {
-            $optionClass = $this->getOptionClass();
+        if ($this instanceof OptionsClassInterface) {
+            $optionClass = $this->getOptionsClass();
             $options = new $optionClass($options);
         }
         return $options;

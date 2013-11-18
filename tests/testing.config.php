@@ -27,6 +27,15 @@ return array(
             ),
         ),
     ),
+    'sake_service_option_config' => array(
+        'container' =>array (
+            'services' => array(
+                'sake_easyconfig.service.foo',
+                'sake_easyconfig.service.bar',
+            ),
+            'service' => 'sake_easyconfig.service.foo',
+        ),
+    ),
     'sake_option' => array(
         'config' => array(
             'setter' => array(

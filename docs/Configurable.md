@@ -1,8 +1,8 @@
 # AbstractConfigurableFactory
 
- Use this class if you want to retrieve the configuration options and setup your instance manually.
+Use this class if you want to retrieve the configuration options and setup your instance manually.
 
-Let's assume we have the following configuration:
+Let's assume we have the following module configuration:
 
 ```php
 return array(
@@ -14,16 +14,19 @@ return array(
             )
         )
     )
+    ...
 );
 ```
 
 ## Array Options
-Then you have easily access to the `orm_default` options in your createService() method with this factory.
+Then you have easily access to the `orm_default` options in your `createService()` method with this factory.
 
 ```php
 use Sake\EasyConfig\Service\AbstractConfigurableFactory;
+use Zend\ServiceManager\FactoryInterface;
+use Zend\ServiceManager\ServiceLocatorInterface;
 
-class MyDBALConnectionFactory extends AbstractConfigurableFactory
+class MyDBALConnectionFactory extends AbstractConfigurableFactory implements FactoryInterface
 {
     public function createService(ServiceLocatorInterface $serviceLocator)
     {
@@ -57,9 +60,12 @@ class MyDBALConnectionFactory extends AbstractConfigurableFactory
 ## Option Class
 If you implement `OptionClassInterface` then you get a option class. Your options class should extend from `\Zend\Stdlib\AbstractOptions`.
 ```
+use \Sake\EasyConfig\Service\AbstractConfigurableFactory;
 use \Sake\EasyConfig\Service\OptionClassInterface;
+use Zend\ServiceManager\FactoryInterface;
+use Zend\ServiceManager\ServiceLocatorInterface;
 
-class MyDBALConnectionFactory extends AbstractConfigurableFactory implements OptionClassInterface
+class MyDBALConnectionFactory extends AbstractConfigurableFactory implements FactoryInterface, OptionClassInterface
 {
     public function createService(ServiceLocatorInterface $serviceLocator)
     {
@@ -72,6 +78,13 @@ class MyDBALConnectionFactory extends AbstractConfigurableFactory implements Opt
         $wrapperClass = $options->getWrapperClass();
 
         // create your instance
+        
+        return $instance;
+    }
+    
+    public function getOptionClass()
+    {
+        return '\DoctrineORMModule\Options\DBALConnection';
     }
 
     public function getModule()
@@ -87,11 +100,6 @@ class MyDBALConnectionFactory extends AbstractConfigurableFactory implements Opt
     public function getName()
     {
         return 'orm_default';
-    }
-
-    public function getOptionClass()
-    {
-        return '\DoctrineORMModule\Options\DBALConnection';
-    }
+    }     
 }
 ```

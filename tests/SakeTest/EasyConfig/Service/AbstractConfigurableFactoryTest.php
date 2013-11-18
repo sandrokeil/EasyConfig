@@ -78,7 +78,7 @@ class AbstractConfigurableFactoryTest extends \SakeTest\Util\TestCase
         );
 
         $stub->expects($this->any())
-            ->method('getOptionClass')
+            ->method('getOptionsClass')
             ->will($this->returnValue('\SakeTest\EasyConfig\Service\TestAsset\OptionClass'));
 
         /* @var $optionsClass \SakeTest\EasyConfig\Service\TestAsset\OptionClass */
