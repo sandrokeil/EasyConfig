@@ -10,6 +10,9 @@
         "service",
         "options"
     ],
+    "authors": [
+        {"name": "Sandro Keil"}
+    ],
     "autoload": {
         "psr-0": {
             "Sake\\EasyConfig": "src/",
