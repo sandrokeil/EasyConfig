@@ -13,6 +13,10 @@
     "authors": [
         {"name": "Sandro Keil"}
     ],
+    "support": {
+        "issues": "https://github.com/sandrokeil/EasyConfig/issues",
+        "source": "https://github.com/sandrokeil/EasyConfig"
+    },
     "autoload": {
         "psr-0": {
             "Sake\\EasyConfig": "src/",
