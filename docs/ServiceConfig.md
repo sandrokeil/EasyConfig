@@ -15,7 +15,7 @@ return array(
 Then you can easily create a menu view helper with navigation container which was injected via service locator. This is only an example, normally you would get this view helper with `\Zend\View\Helper\Navigation\PluginManager`.
 
 ```php
-use \Sake\EasyConfig\Service\AbstractServiceConfigurableFactory
+use Sake\EasyConfig\Service\AbstractServiceConfigurableFactory
 
 class MyViewHelperFactory extends AbstractServiceConfigurableFactory
 {

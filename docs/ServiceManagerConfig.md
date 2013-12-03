@@ -42,7 +42,7 @@ class MyOrmManagerFactory extends AbstractServiceManagerConfigFactory
         return 'orm_default';
     }
 
-    public function getOptionClass()
+    public function getOptionsClass()
     {
         return 'MyModule\Service\Options\OrmManagerOptions';
     }

@@ -1,6 +1,6 @@
 {
     "name": "sandrokeil/easy-config",
-    "description": "Easy config provides some abstract factories to easily create instances depending on configuration or retrieve specified module options.",
+    "description": "EasyConfig provides some abstract factories to create easily instances depending on configuration or to retrieve specific module options.",
     "homepage": "https://github.com/sandrokeil/EasyConfig",
     "license": "BSD-3-Clause",
     "type": "library",
@@ -13,10 +13,6 @@
     "authors": [
         {"name": "Sandro Keil"}
     ],
-    "support": {
-        "issues": "https://github.com/sandrokeil/EasyConfig/issues",
-        "source": "https://github.com/sandrokeil/EasyConfig"
-    },
     "autoload": {
         "psr-0": {
             "Sake\\EasyConfig": "src/",

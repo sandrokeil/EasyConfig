@@ -23,7 +23,7 @@ We have also a class `ResultCache` with a single constructor argument like `publ
 
 
 ```php
-use \Sake\EasyConfig\Service\AbstractConstructorOptionConfigFactory;
+use Sake\EasyConfig\Service\AbstractConstructorOptionConfigFactory;
 
 class ResultCacheFactory extends AbstractConstructorOptionConfigFactory
 {
@@ -82,7 +82,7 @@ return array(
 We have also a class `ResultCache` with two constructor arguments like `public function __construct(array $config, array $other)`. So you can easily inject the above config to this class with this factory.
 
 ```php
-use \Sake\EasyConfig\Service\AbstractConstructorOptionConfigFactory;
+use Sake\EasyConfig\Service\AbstractConstructorOptionConfigFactory;
 
 class ResultCacheFactory extends AbstractConstructorOptionConfigFactory
 {

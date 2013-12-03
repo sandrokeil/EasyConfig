@@ -22,7 +22,7 @@ return array(
 You can easily inject the above options to an instance with this factory.
 
 ```php
-use \Sake\EasyConfig\Service\AbstractOptionHydratorConfigFactory;
+use Sake\EasyConfig\Service\AbstractOptionHydratorConfigFactory;
 
 class ResultCacheFactory extends AbstractOptionHydratorConfigFactory
 {
