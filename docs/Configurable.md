@@ -60,12 +60,12 @@ class MyDBALConnectionFactory extends AbstractConfigurableFactory implements Fac
 ## Option Class
 If you implement `OptionClassInterface` then you get a option class. Your options class should extend from `\Zend\Stdlib\AbstractOptions`.
 ```
-use \Sake\EasyConfig\Service\AbstractConfigurableFactory;
-use \Sake\EasyConfig\Service\OptionClassInterface;
+use Sake\EasyConfig\Service\AbstractConfigurableFactory;
+use Sake\EasyConfig\Service\OptionsClassInterface;
 use Zend\ServiceManager\FactoryInterface;
 use Zend\ServiceManager\ServiceLocatorInterface;
 
-class MyDBALConnectionFactory extends AbstractConfigurableFactory implements FactoryInterface, OptionClassInterface
+class MyDBALConnectionFactory extends AbstractConfigurableFactory implements FactoryInterface, OptionsClassInterface
 {
     public function createService(ServiceLocatorInterface $serviceLocator)
     {
@@ -78,11 +78,11 @@ class MyDBALConnectionFactory extends AbstractConfigurableFactory implements Fac
         $wrapperClass = $options->getWrapperClass();
 
         // create your instance
-        
+
         return $instance;
     }
-    
-    public function getOptionClass()
+
+    public function getOptionsClass()
     {
         return '\DoctrineORMModule\Options\DBALConnection';
     }
@@ -100,6 +100,6 @@ class MyDBALConnectionFactory extends AbstractConfigurableFactory implements Fac
     public function getName()
     {
         return 'orm_default';
-    }     
+    }
 }
 ```
