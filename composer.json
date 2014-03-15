@@ -1,6 +1,6 @@
 {
     "name": "sandrokeil/easy-config",
-    "description": "EasyConfig provides some abstract factories to create easily instances depending on configuration or to retrieve specific module options.",
+    "description": "Zend Framework 2 module to retrieve specific module options and provides some abstract factories to create easily instances depending on configuration",
     "homepage": "https://github.com/sandrokeil/EasyConfig",
     "license": "BSD-3-Clause",
     "type": "library",
@@ -26,11 +26,11 @@
     "require-dev": {
         "php": ">=5.3.3",
         "zendframework/zendframework": "~2.2",
-        "phpunit/phpunit": ">=3.7",
-        "phpunit/php-invoker": "*",
-        "phpunit/phpunit-story": "*",
-        "phpmd/phpmd": ">=1.4",
-        "squizlabs/php_codesniffer": ">=1.4",
+        "phpunit/phpunit": "~3.7",
+        "phpunit/php-invoker": "~1.1",
+        "phpunit/phpunit-story": "~1.0",
+        "phpmd/phpmd": "~1.4",
+        "squizlabs/php_codesniffer": "~1.4",
         "satooshi/php-coveralls": "~0.6"
     },
     "suggest": {
