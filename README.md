@@ -5,6 +5,7 @@
 [![Latest Stable Version](https://poser.pugx.org/sandrokeil/easy-config/v/stable.png)](https://packagist.org/packages/sandrokeil/easy-config)
 [![Dependency Status](https://www.versioneye.com/user/projects/53245667ec13758e7d00014b/badge.png)](https://www.versioneye.com/user/projects/53245667ec13758e7d00014b)
 [![Total Downloads](https://poser.pugx.org/sandrokeil/easy-config/downloads.png)](https://packagist.org/packages/sandrokeil/easy-config)
+[![License](https://poser.pugx.org/sandrokeil/easy-config/license.png)](https://packagist.org/packages/sandrokeil/easy-config)
 
 Easy config provides some abstract factories to easily create instances depending on configuration or retrieve specified module options.
 
