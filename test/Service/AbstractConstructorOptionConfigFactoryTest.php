@@ -9,8 +9,8 @@
 
 namespace SakeTest\EasyConfig\Service;
 
-use SakeTest\EasyConfig\Util\AbstractBaseTestCase as BaseTestCase;
-use \Sake\EasyConfig\Service\AbstractConstructorOptionConfigFactory;
+use SakeTest\EasyConfig\Service\AbstractBaseTestCase as BaseTestCase;
+use Sake\EasyConfig\Service\AbstractConstructorOptionConfigFactory;
 
 /**
  * Class AbstractConstructorOptionConfigFactoryTest

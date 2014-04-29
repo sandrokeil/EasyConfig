@@ -7,7 +7,7 @@
  * @license   http://github.com/sandrokeil/EasyConfig/blob/master/LICENSE.txt New BSD License
  */
 
-namespace SakeTest\EasyConfig\Util;
+namespace SakeTest\EasyConfig\Service;
 
 use Zend\Test\Util\ModuleLoader;
 use PHPUnit_Framework_TestCase as TestCase;

@@ -9,7 +9,7 @@
 
 namespace SakeTest\EasyConfig\Service;
 
-use SakeTest\EasyConfig\Util\AbstractBaseTestCase as BaseTestCase;
+use SakeTest\EasyConfig\Service\AbstractBaseTestCase as BaseTestCase;
 
 /**
  * Class ServiceManagerConfigFactoryTest

@@ -9,7 +9,7 @@
 
 namespace SakeTest\EasyConfig\Service\TestAsset;
 
-use \Sake\EasyConfig\Service;
+use Sake\EasyConfig\Service;
 
 abstract class AbstractOptionClassFactory extends Service\AbstractConfigurableFactory implements
     Service\OptionsClassInterface
