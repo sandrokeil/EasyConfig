@@ -3,15 +3,21 @@
  * Sake
  *
  * @link      http://github.com/sandrokeil/EasyConfig for the canonical source repository
- * @copyright Copyright (c) 2013 Sandro Keil
+ * @copyright Copyright (c) 2013-2014 Sandro Keil
  * @license   http://github.com/sandrokeil/EasyConfig/blob/master/LICENSE.txt New BSD License
  */
 
-namespace SakeTest\Util;
+namespace SakeTest\EasyConfig\Util;
 
-use SakeTest\Bootstrap;
+use Zend\Test\Util\ModuleLoader;
+use PHPUnit_Framework_TestCase as TestCase;
 
-class TestCase extends \PHPUnit_Framework_TestCase
+/**
+ * Class ServiceTestCase
+ *
+ * Main test case class for service test classes
+ */
+abstract class AbstractBaseTestCase extends TestCase
 {
     /**
      * @var \Zend\ServiceManager\ServiceManager
@@ -19,12 +25,25 @@ class TestCase extends \PHPUnit_Framework_TestCase
     protected $serviceManager;
 
     /**
+     * @var ModuleLoader
+     */
+    protected $moduleLoader;
+
+    /**
      * Setup tests
      */
     public function setUp()
     {
         parent::setUp();
-        $this->serviceManager = Bootstrap::getServiceManager();
+
+        // Load the user-defined test configuration file, if it exists; otherwise, load default
+        if (is_readable('test/TestConfig.php')) {
+            $testConfig = require 'test/TestConfig.php';
+        } else {
+            $testConfig = require 'test/TestConfig.php.dist';
+        }
+        $this->moduleLoader = new ModuleLoader($testConfig);
+        $this->serviceManager = $this->moduleLoader->getServiceManager();
     }
 
     /**

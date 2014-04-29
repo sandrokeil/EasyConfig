@@ -6,6 +6,8 @@
     "type": "library",
     "keywords": [
         "zf2",
+        "zend framework",
+        "service manager",
         "config",
         "service",
         "options"
@@ -14,9 +16,9 @@
         {"name": "Sandro Keil"}
     ],
     "autoload": {
-        "psr-0": {
-            "Sake\\EasyConfig": "src/",
-            "SakeTest\\EasyConfig": "tests/"
+        "psr-4": {
+            "Sake\\EasyConfig\\": "src/",
+            "SakeTest\\EasyConfig\\": "test/"
         }
     },
     "require": {

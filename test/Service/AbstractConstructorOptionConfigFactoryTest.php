@@ -3,12 +3,13 @@
  * Sake
  *
  * @link      http://github.com/sandrokeil/EasyConfig for the canonical source repository
- * @copyright Copyright (c) 2013 Sandro Keil
+ * @copyright Copyright (c) 2013-2014 Sandro Keil
  * @license   http://github.com/sandrokeil/EasyConfig/blob/master/LICENSE.txt New BSD License
  */
 
 namespace SakeTest\EasyConfig\Service;
 
+use SakeTest\EasyConfig\Util\AbstractBaseTestCase as BaseTestCase;
 use \Sake\EasyConfig\Service\AbstractConstructorOptionConfigFactory;
 
 /**
@@ -16,7 +17,7 @@ use \Sake\EasyConfig\Service\AbstractConstructorOptionConfigFactory;
  *
  * Tests integrity of \Sake\EasyConfig\Service\AbstractConstructorOptionConfigFactory
  */
-class AbstractConstructorOptionConfigFactoryTest extends \SakeTest\Util\TestCase
+class AbstractConstructorOptionConfigFactoryAbstractBaseTest extends BaseTestCase
 {
     /**
      * Class under test
