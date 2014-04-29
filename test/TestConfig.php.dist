@@ -17,7 +17,6 @@ return array(
         ),
         'module_paths' => array(
             'src',
-            'vendor',
         ),
     ),
 );

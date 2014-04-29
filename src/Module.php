@@ -9,20 +9,9 @@
 
 namespace Sake\EasyConfig;
 
-use Zend\ModuleManager\Feature\ConfigProviderInterface;
-
 /**
  * This class initializes the EasyConfig module.
  */
-class Module implements ConfigProviderInterface
+class Module
 {
-    /**
-     * Returns module config
-     *
-     * @return array
-     */
-    public function getConfig()
-    {
-        return require dirname(dirname(dirname(__DIR__))) . '/config/module.config.php';
-    }
 }

@@ -3,18 +3,20 @@
  * Sake
  *
  * @link      http://github.com/sandrokeil/EasyConfig for the canonical source repository
- * @copyright Copyright (c) 2013 Sandro Keil
+ * @copyright Copyright (c) 2013-2014 Sandro Keil
  * @license   http://github.com/sandrokeil/EasyConfig/blob/master/LICENSE.txt New BSD License
  */
 
 namespace SakeTest\EasyConfig\Service;
+
+use SakeTest\EasyConfig\Service\AbstractBaseTestCase as BaseTestCase;
 
 /**
  * Class AbstractOptionHydratorConfigFactoryTest
  *
  * Tests integrity of \Sake\EasyConfig\Service\AbstractOptionHydratorConfigFactory
  */
-class AbstractOptionHydratorConfigFactoryTest extends \SakeTest\Util\TestCase
+class AbstractOptionHydratorConfigFactoryAbstractBaseTest extends BaseTestCase
 {
     /**
      * Class under test

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- disable strict to debug tests -->
-<phpunit bootstrap="./tests/Bootstrap.php"
+<phpunit bootstrap="./test/Bootstrap.php"
          colors="true"
          strict="true"
          convertErrorsToExceptions="true"
@@ -13,22 +13,23 @@
 
     <testsuites>
         <testsuite name="Sake EasyConfig Test Suite">
-            <directory>./tests/SakeTest/EasyConfig</directory>
+            <directory>./test</directory>
+            <exclude>./test/Util/</exclude>
         </testsuite>
     </testsuites>
 
     <filter>
-        <whitelist addUncoveredFilesFromWhitelist="true">
+        <whitelist processUncoveredFilesFromWhitelist="true">
             <directory suffix=".php">./config</directory>
             <directory suffix=".php">./src</directory>
         </whitelist>
     </filter>
 
     <logging>
-        <log type="coverage-html" target="./tests/log/report/"
+        <log type="coverage-html" target="./build/logs/report/"
              charset="UTF-8" yui="true" highlight="true"
              lowUpperBound="35" highLowerBound="70" showUncoveredFiles="true" />
-        <log type="testdox-html" target="./tests/log/testdox.html" />
+        <log type="testdox-html" target="./build/logs/testdox.html" />
         <log type="coverage-clover" target="build/logs/clover.xml"/>
     </logging>
 
