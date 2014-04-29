@@ -1,4 +1,4 @@
-# EasyConfig module for Zend Framework 2
+# Easy Config module for Zend Framework 2
 [![Build Status](https://travis-ci.org/sandrokeil/EasyConfig.png?branch=master)](https://travis-ci.org/sandrokeil/EasyConfig)
 [![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/sandrokeil/EasyConfig/badges/quality-score.png?s=cdef161c14156e3e36ed0ce3d6fd7979d38d916c)](https://scrutinizer-ci.com/g/sandrokeil/EasyConfig/)
 [![Coverage Status](https://coveralls.io/repos/sandrokeil/EasyConfig/badge.png?branch=master)](https://coveralls.io/r/sandrokeil/EasyConfig?branch=master)
@@ -6,11 +6,11 @@
 [![Dependency Status](https://www.versioneye.com/user/projects/53245667ec13758e7d00014b/badge.png)](https://www.versioneye.com/user/projects/53245667ec13758e7d00014b)
 [![Total Downloads](https://poser.pugx.org/sandrokeil/easy-config/downloads.png)](https://packagist.org/packages/sandrokeil/easy-config)
 
-Easy config provides some abstract factories to easily create instances depending on configuration or retrieve specified module options.
+EasyConfig provides some abstract factories to easily create instances depending on configuration or retrieve specified module options.
 
 You should have coding conventions and you should have config conventions. If not, you should think about that.
 
-This module config keys should have the following structure `module.scope.name`.  A common configuration looks like that:
+The module config keys should have the following structure `module.scope.name`.  A common configuration looks like that:
 
 ```php
 return array(
