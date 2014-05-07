@@ -2,9 +2,11 @@
 [![Build Status](https://travis-ci.org/sandrokeil/EasyConfig.png?branch=master)](https://travis-ci.org/sandrokeil/EasyConfig)
 [![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/sandrokeil/EasyConfig/badges/quality-score.png?s=cdef161c14156e3e36ed0ce3d6fd7979d38d916c)](https://scrutinizer-ci.com/g/sandrokeil/EasyConfig/)
 [![Coverage Status](https://coveralls.io/repos/sandrokeil/EasyConfig/badge.png?branch=master)](https://coveralls.io/r/sandrokeil/EasyConfig?branch=master)
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/8e28c389-325c-4297-9976-98ff1bfabf74/mini.png)](https://insight.sensiolabs.com/projects/8e28c389-325c-4297-9976-98ff1bfabf74)
 [![Latest Stable Version](https://poser.pugx.org/sandrokeil/easy-config/v/stable.png)](https://packagist.org/packages/sandrokeil/easy-config)
 [![Dependency Status](https://www.versioneye.com/user/projects/53615c75fe0d0720eb00009e/badge.png)](https://www.versioneye.com/user/projects/53615c75fe0d0720eb00009e)
 [![Total Downloads](https://poser.pugx.org/sandrokeil/easy-config/downloads.png)](https://packagist.org/packages/sandrokeil/easy-config)
+[![License](https://poser.pugx.org/sandrokeil/easy-config/license.png)](https://packagist.org/packages/sandrokeil/easy-config)
 
 EasyConfig provides some abstract factories to easily create instances depending on configuration or retrieve specified module options.
 
