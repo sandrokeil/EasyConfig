@@ -12,6 +12,11 @@ You should have coding conventions and you should have config conventions. If no
 
 The module config keys should have the following structure `module.scope.name`.  A common configuration looks like that:
 
+ * **Well tested.** Besides unit test and continuous integration/inspection this solution is also ready for production use.
+ * **Great foundations.** Based on [Zend Framework 2](https://github.com/zendframework/zf2)
+ * **Every change is tracked**. Want to know whats new? Take a look at [CHANGELOG.md](https://github.com/sandrokeil/EasyConfig/blob/master/CHANGELOG.md)
+ * **Listen to your ideas.** Have a great idea? Bring your tested pull request or open a new issue.
+
 ```php
 return array(
     'doctrine' => array(

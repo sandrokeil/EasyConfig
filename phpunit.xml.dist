@@ -14,7 +14,6 @@
     <testsuites>
         <testsuite name="Sake EasyConfig Test Suite">
             <directory>./test</directory>
-            <exclude>./test/Util/</exclude>
         </testsuite>
     </testsuites>
 
