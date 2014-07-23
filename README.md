@@ -10,14 +10,14 @@
 
 EasyConfig provides some abstract factories to easily create instances depending on configuration or retrieve specified module options.
 
-You should have coding conventions and you should have config conventions. If not, you should think about that.
-
-The module config keys should have the following structure `module.scope.name`.  A common configuration looks like that:
-
  * **Well tested.** Besides unit test and continuous integration/inspection this solution is also ready for production use.
  * **Great foundations.** Based on [Zend Framework 2](https://github.com/zendframework/zf2)
  * **Every change is tracked**. Want to know whats new? Take a look at [CHANGELOG.md](https://github.com/sandrokeil/EasyConfig/blob/master/CHANGELOG.md)
  * **Listen to your ideas.** Have a great idea? Bring your tested pull request or open a new issue.
+
+You should have coding conventions and you should have config conventions. If not, you should think about that.
+
+The module config keys should have the following structure `module.scope.name`.  A common configuration looks like that:
 
 ```php
 return array(
@@ -31,6 +31,7 @@ return array(
     )
 );
 ```
+
 So `doctrine` is the module, `connection` is the scope and `orm_default` is the name. After that the specified instance options follow.
 With [AbstractConfigurableFactory](https://github.com/sandrokeil/EasyConfig/tree/master/docs/Configurable.md) we can easily access to these options also with an option class.
 
@@ -93,7 +94,7 @@ Put the following into your composer.json
         }
     }
 
-Then add `Sake\EasyConfig` to your `config/application.config.php` at the first module.
+It is not necessary to add this module to your `config/application.config.php`.
 
 ## Documentation
 
