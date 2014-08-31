@@ -7,7 +7,7 @@
  * @license   http://github.com/sandrokeil/EasyConfig/blob/master/LICENSE.txt New BSD License
  */
 
-namespace SakeTest\BlockchainWalletApi;
+namespace SakeTest\EasyConfig;
 
 // set error reporting
 error_reporting(E_ALL | E_STRICT);
