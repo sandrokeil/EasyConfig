@@ -3,7 +3,7 @@
 [![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/sandrokeil/EasyConfig/badges/quality-score.png?s=cdef161c14156e3e36ed0ce3d6fd7979d38d916c)](https://scrutinizer-ci.com/g/sandrokeil/EasyConfig/)
 [![Coverage Status](https://coveralls.io/repos/sandrokeil/EasyConfig/badge.png?branch=master)](https://coveralls.io/r/sandrokeil/EasyConfig?branch=master)
 [![HHVM Status](http://hhvm.h4cc.de/badge/sandrokeil/easy-config.svg)](http://hhvm.h4cc.de/package/sandrokeil/easy-config)
-[![SensioLabsInsight](https://insight.sensiolabs.com/projects/8e28c389-325c-4297-9976-98ff1bfabf74/mini.png)](https://insight.sensiolabs.com/projects/8e28c389-325c-4297-9976-98ff1bfabf74)
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/c7092bbe-8dc2-473d-9c13-617f41b2375b/mini.png)](https://insight.sensiolabs.com/projects/c7092bbe-8dc2-473d-9c13-617f41b2375b)
 [![Latest Stable Version](https://poser.pugx.org/sandrokeil/easy-config/v/stable.png)](https://packagist.org/packages/sandrokeil/easy-config)
 [![Dependency Status](https://www.versioneye.com/user/projects/53615c75fe0d0720eb00009e/badge.png)](https://www.versioneye.com/user/projects/53615c75fe0d0720eb00009e)
 [![Total Downloads](https://poser.pugx.org/sandrokeil/easy-config/downloads.png)](https://packagist.org/packages/sandrokeil/easy-config)
