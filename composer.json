@@ -1,6 +1,6 @@
 {
     "name": "sandrokeil/easy-config",
-    "description": "Zend Framework 2 module to retrieve specific module options and provides some abstract factories to create easily instances depending on configuration",
+    "description": "Zend Framework 2 (zf2) module to retrieve specific module options and provides some abstract factories to create easily instances depending on configuration",
     "homepage": "https://github.com/sandrokeil/EasyConfig",
     "license": "BSD-3-Clause",
     "type": "library",
@@ -8,12 +8,13 @@
         "zf2",
         "zend framework",
         "service manager",
+        "factory",
         "config",
         "service",
         "options"
     ],
     "authors": [
-        {"name": "Sandro Keil"}
+        {"name": "Sandro Keil", "homepage": "https://github.com/sandrokeil"}
     ],
     "autoload": {
         "psr-4": {
