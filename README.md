@@ -1,4 +1,13 @@
 # Easy Config module for Zend Framework 2
+
+> You want to configure your factories via your module config?
+
+> You want to configure option classes via module config for your plugin manager?
+
+> You want to add other services via module config to a factory?
+
+> This module comes to the rescue!
+
 [![Build Status](https://travis-ci.org/sandrokeil/EasyConfig.png?branch=master)](https://travis-ci.org/sandrokeil/EasyConfig)
 [![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/sandrokeil/EasyConfig/badges/quality-score.png?s=cdef161c14156e3e36ed0ce3d6fd7979d38d916c)](https://scrutinizer-ci.com/g/sandrokeil/EasyConfig/)
 [![Coverage Status](https://coveralls.io/repos/sandrokeil/EasyConfig/badge.png?branch=master)](https://coveralls.io/r/sandrokeil/EasyConfig?branch=master)
