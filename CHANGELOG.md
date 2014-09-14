@@ -1,5 +1,9 @@
 # EasyConfig CHANGELOG
 
+## 1.3.0 TBA
+
+- Added MandatoryOptionsInterface to check for mandatory options automatically
+
 ## 1.2.0 (2014-04-29)
 
 - Updated source to PSR-4

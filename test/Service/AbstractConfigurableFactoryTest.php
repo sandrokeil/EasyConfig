@@ -90,4 +90,43 @@ class AbstractConfigurableFactoryAbstractBaseTest extends BaseTestCase
         $this->assertSame('foo', $optionsClass->getFoo());
         $this->assertSame('bar', $optionsClass->getBar());
     }
+
+    /**
+     * Tests if getOptions() works with mandatory options interface
+     *
+     * @covers \Sake\EasyConfig\Service\AbstractConfigurableFactory::getOptions
+     */
+    public function testGetOptionsShouldCheckMandatoryOptions()
+    {
+        $stub = parent::getStub('\SakeTest\EasyConfig\Service\TestAsset\AbstractMandatoryOptionsFactory');
+
+        $stub->expects($this->any())
+            ->method('getMandatoryOptions')
+            ->will($this->returnValue(array('invokables')));
+
+        $options = $stub->getOptions($this->serviceManager);
+
+        $this->assertArrayHasKey('invokables', $options);
+    }
+
+    /**
+     * Tests if getOptions() throws a runtime exception if mandatory option is missing
+     *
+     * @covers \Sake\EasyConfig\Service\AbstractConfigurableFactory::getOptions
+     */
+    public function testGetOptionsShouldThrowRuntimeExceptionIfMandatoryOptionIsMissing()
+    {
+        $stub = parent::getStub('\SakeTest\EasyConfig\Service\TestAsset\AbstractMandatoryOptionsFactory');
+
+        $stub->expects($this->any())
+            ->method('getMandatoryOptions')
+            ->will($this->returnValue(array('invalid')));
+
+        $this->setExpectedException(
+            '\Sake\EasyConfig\Service\Exception\RuntimeException',
+            'Mandatory option "invalid"'
+        );
+
+        $stub->getOptions($this->serviceManager);
+    }
 }

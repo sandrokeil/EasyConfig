@@ -57,6 +57,38 @@ class MyDBALConnectionFactory extends AbstractConfigurableFactory implements Fac
     }
 }
 ```
+
+## Mandatory Options check
+You can also check for mandatory options automatically with `MandatoryOptionsInterface`. Now we want also check that
+option `driverClass` and `params` are available. So we also implement in the example above the interface
+`MandatoryOptionsInterface`. If one of these options is missing, an exception is raised.
+
+```php
+use Sake\EasyConfig\Service\AbstractConfigurableFactory;
+use Sake\EasyConfig\Service\MandatoryOptionsInterface;
+use Zend\ServiceManager\FactoryInterface;
+use Zend\ServiceManager\ServiceLocatorInterface;
+
+class MyDBALConnectionFactory extends AbstractConfigurableFactory implements FactoryInterface, MandatoryOptionsInterface
+{
+    // same code as above
+
+    /**
+     * Returns a list of mandatory options which must be available
+     *
+     * @return array
+     */
+    public function getMandatoryOptions()
+    {
+        return array(
+            'driverClass',
+            'params',
+        );
+    }
+}
+```
+This can also be combined with `OptionsClassInterface`
+
 ## Option Class
 If you implement `OptionClassInterface` then you get a option class. Your options class should extend from `\Zend\Stdlib\AbstractOptions`.
 ```

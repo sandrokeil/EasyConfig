@@ -43,15 +43,16 @@ return array(
 ```
 
 So `doctrine` is the module, `connection` is the scope and `orm_default` is the name. After that the specified instance options follow.
-With [AbstractConfigurableFactory](https://github.com/sandrokeil/EasyConfig/tree/master/docs/Configurable.md) we can easily access to these options also with an option class.
+With [AbstractConfigurableFactory](docs/Configurable.md) we can easily access to these options also with an option class and mandatory options check.
 
 ```php
 use Sake\EasyConfig\Service\AbstractConfigurableFactory;
 use Sake\EasyConfig\Service\OptionsClassInterface;
+use Sake\EasyConfig\Service\MandatoryOptionsInterface;
 use Zend\ServiceManager\FactoryInterface;
 use Zend\ServiceManager\ServiceLocatorInterface;
 
-class MyDBALConnectionFactory extends AbstractConfigurableFactory implements FactoryInterface, OptionsClassInterface
+class MyDBALConnectionFactory extends AbstractConfigurableFactory implements FactoryInterface, OptionsClassInterface, MandatoryOptionsInterface
 {
     public function createService(ServiceLocatorInterface $serviceLocator)
     {
@@ -67,6 +68,14 @@ class MyDBALConnectionFactory extends AbstractConfigurableFactory implements Fac
         // create your instance
 
         return $instance;
+    }
+
+    public function getMandatoryOptions()
+    {
+        return array(
+            'driverClass',
+            'params',
+        );
     }
 
     public function getOptionsClass()
@@ -104,13 +113,13 @@ Put the following into your composer.json
         }
     }
 
-It is not necessary to add this module to your `config/application.config.php`.
+It is *not necessary* to add this module to your `config/application.config.php`.
 
 ## Documentation
 
 You can find documentation about the usages of factories at the following links:
 
- * [Configurable - Get an options class or an array of options](https://github.com/sandrokeil/EasyConfig/tree/master/docs/Configurable.md)
+ * [Configurable - Get an options class or an array of options with mandytoy](https://github.com/sandrokeil/EasyConfig/tree/master/docs/Configurable.md)
  * [ConstructorOptionConfig - Inject options via constructor](https://github.com/sandrokeil/EasyConfig/tree/master/docs/ConstructorOptionConfig.md)
  * [OptionHydratorConfig - Inject options with a hydrator](https://github.com/sandrokeil/EasyConfig/tree/master/docs/OptionHydratorConfig.md)
  * [ServiceConfig - Inject an other service to instance](https://github.com/sandrokeil/EasyConfig/tree/master/docs/ServiceConfig.md)
