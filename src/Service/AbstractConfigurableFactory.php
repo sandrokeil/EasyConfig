@@ -42,7 +42,20 @@ abstract class AbstractConfigurableFactory implements ConfigurableInterface
             ));
         }
         $options = $options[$this->getModule()][$this->getScope()][$this->getName()];
-
+        // check for mandatory options
+        if ($this instanceof MandatoryOptionsInterface) {
+            foreach ($this->getMandatoryOptions() as $option) {
+                if (!isset($options[$option])) {
+                    throw new Exception\RuntimeException(sprintf(
+                        'Mandatory option "%s" was not set for configuration "%s.%s.%s".',
+                        $option,
+                        $this->getModule(),
+                        $this->getScope(),
+                        $this->getName()
+                    ));
+                }
+            }
+        }
         // create option class
         if ($this instanceof OptionsClassInterface) {
             $optionClass = $this->getOptionsClass();

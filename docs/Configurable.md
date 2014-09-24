@@ -32,6 +32,29 @@ class MyDBALConnectionFactory extends AbstractConfigurableFactory implements Fac
     {
         // get options for doctrine.connection.orm_default
         $options = $this->getOptions($serviceLocator);
+        
+        // check if mandatory options are available
+        if (empty($options['driverClass'])) {
+            throw new Exception\RuntimeException(
+                sprintf(
+                    'Driver class was not set for configuration %s.%s.%s',
+                    $this->getModule(),
+                    $this->getScope(),
+                    $this->getName()
+                )
+            );
+        }
+
+        if (empty($options['params'])) {
+            throw new Exception\RuntimeException(
+                sprintf(
+                    'Params was not set for configuration %s.%s.%s',
+                    $this->getModule(),
+                    $this->getScope(),
+                    $this->getName()
+                )
+            );
+        }
 
         $driverClass = $options['driverClass'];
         $params = $options['params'];
@@ -57,6 +80,66 @@ class MyDBALConnectionFactory extends AbstractConfigurableFactory implements Fac
     }
 }
 ```
+
+## Mandatory Options check
+You can also check for mandatory options automatically with `MandatoryOptionsInterface`. Now we want also check that
+option `driverClass` and `params` are available. So we also implement in the example above the interface
+`MandatoryOptionsInterface`. If one of these options is missing, an exception is raised.
+
+```php
+use Sake\EasyConfig\Service\AbstractConfigurableFactory;
+use Sake\EasyConfig\Service\MandatoryOptionsInterface;
+use Zend\ServiceManager\FactoryInterface;
+use Zend\ServiceManager\ServiceLocatorInterface;
+
+class MyDBALConnectionFactory extends AbstractConfigurableFactory implements FactoryInterface, MandatoryOptionsInterface
+{
+    public function createService(ServiceLocatorInterface $serviceLocator)
+    {
+        // get options for doctrine.connection.orm_default
+        $options = $this->getOptions($serviceLocator);
+
+        // mandatory options check is automatically done by MandatoryOptionsInterface
+
+        $driverClass = $options['driverClass'];
+        $params = $options['params'];
+
+        // create your instance and set options
+
+        return $instance;
+    }
+
+    /**
+     * Returns a list of mandatory options which must be available
+     *
+     * @return array
+     */
+    public function getMandatoryOptions()
+    {
+        return array(
+            'driverClass',
+            'params',
+        );
+    }
+
+    public function getModule()
+    {
+        return 'doctrine';
+    }
+
+    public function getScope()
+    {
+        return 'connection';
+    }
+
+    public function getName()
+    {
+        return 'orm_default';
+    }
+}
+```
+This can also be combined with `OptionsClassInterface`
+
 ## Option Class
 If you implement `OptionClassInterface` then you get a option class. Your options class should extend from `\Zend\Stdlib\AbstractOptions`.
 ```

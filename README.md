@@ -1,4 +1,4 @@
-# Easy Config module for Zend Framework 2
+# EasyConfig module for Zend Framework 2
 
 > You want to configure your factories via your module config?
 
@@ -18,7 +18,7 @@
 [![Total Downloads](https://poser.pugx.org/sandrokeil/easy-config/downloads.png)](https://packagist.org/packages/sandrokeil/easy-config)
 [![License](https://poser.pugx.org/sandrokeil/easy-config/license.png)](https://packagist.org/packages/sandrokeil/easy-config)
 
-EasyConfig provides some abstract factories to easily create instances depending on configuration or retrieve specified module options.
+EasyConfig provides some abstract factories and some interfaces to easily create instances depending on configuration or retrieve specified module options.
 
  * **Well tested.** Besides unit test and continuous integration/inspection this solution is also ready for production use.
  * **Great foundations.** Based on [Zend Framework 2](https://github.com/zendframework/zf2)
@@ -43,15 +43,16 @@ return array(
 ```
 
 So `doctrine` is the module, `connection` is the scope and `orm_default` is the name. After that the specified instance options follow.
-With [AbstractConfigurableFactory](https://github.com/sandrokeil/EasyConfig/tree/master/docs/Configurable.md) we can easily access to these options also with an option class.
+With [AbstractConfigurableFactory](docs/Configurable.md) we can easily access to these options also with an option class and mandatory options check. See [docs](docs/Configurable.md) for a detailed explanation.
 
 ```php
 use Sake\EasyConfig\Service\AbstractConfigurableFactory;
 use Sake\EasyConfig\Service\OptionsClassInterface;
+use Sake\EasyConfig\Service\MandatoryOptionsInterface;
 use Zend\ServiceManager\FactoryInterface;
 use Zend\ServiceManager\ServiceLocatorInterface;
 
-class MyDBALConnectionFactory extends AbstractConfigurableFactory implements FactoryInterface, OptionsClassInterface
+class MyDBALConnectionFactory extends AbstractConfigurableFactory implements FactoryInterface, OptionsClassInterface, MandatoryOptionsInterface
 {
     public function createService(ServiceLocatorInterface $serviceLocator)
     {
@@ -69,21 +70,54 @@ class MyDBALConnectionFactory extends AbstractConfigurableFactory implements Fac
         return $instance;
     }
 
+    /**
+     * Returns a list of mandatory options which must be available
+     *
+     * @return array
+     */
+    public function getMandatoryOptions()
+    {
+        return array(
+            'driverClass',
+            'params',
+        );
+    }
+
+    /**
+     * Return the option class name (fcqn) where options are injected via constructor
+     *
+     * @return string
+     */
     public function getOptionsClass()
     {
         return '\DoctrineORMModule\Options\DBALConnection';
     }
 
+    /**
+     * Module name
+     *
+     * @return string
+     */
     public function getModule()
     {
         return 'doctrine';
     }
 
+    /**
+     * Config scope
+     *
+     * @return string
+     */
     public function getScope()
     {
         return 'connection';
     }
 
+    /**
+     * Config name
+     *
+     * @return string
+     */
     public function getName()
     {
         return 'orm_default';
@@ -104,16 +138,16 @@ Put the following into your composer.json
         }
     }
 
-It is not necessary to add this module to your `config/application.config.php`.
+It is *not necessary* to add this module to your `config/application.config.php`.
 
 ## Documentation
 
 You can find documentation about the usages of factories at the following links:
 
- * [Configurable - Get an options class or an array of options](https://github.com/sandrokeil/EasyConfig/tree/master/docs/Configurable.md)
- * [ConstructorOptionConfig - Inject options via constructor](https://github.com/sandrokeil/EasyConfig/tree/master/docs/ConstructorOptionConfig.md)
- * [OptionHydratorConfig - Inject options with a hydrator](https://github.com/sandrokeil/EasyConfig/tree/master/docs/OptionHydratorConfig.md)
- * [ServiceConfig - Inject an other service to instance](https://github.com/sandrokeil/EasyConfig/tree/master/docs/ServiceConfig.md)
- * [ServiceManagerConfig - Inject Options to a service plugin manager](https://github.com/sandrokeil/EasyConfig/tree/master/docs/ServiceManagerConfig.md)
- * [ServiceOptionConfig - Inject one or more services](https://github.com/sandrokeil/EasyConfig/tree/master/docs/ServiceOptionConfig.md)
+ * [Configurable - Get an options class or an array of options with mandytoy](docs/Configurable.md)
+ * [ConstructorOptionConfig - Inject options via constructor](docs/ConstructorOptionConfig.md)
+ * [OptionHydratorConfig - Inject options with a hydrator](docs/OptionHydratorConfig.md)
+ * [ServiceConfig - Inject an other service to instance](docs/ServiceConfig.md)
+ * [ServiceManagerConfig - Inject Options to a service plugin manager](docs/ServiceManagerConfig.md)
+ * [ServiceOptionConfig - Inject one or more services](docs/ServiceOptionConfig.md)
 
