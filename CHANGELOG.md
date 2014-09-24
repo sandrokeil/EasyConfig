@@ -1,8 +1,9 @@
 # EasyConfig CHANGELOG
 
-## 1.3.0 TBA
+## 1.3.0 (2014-09-24)
 
 - Added MandatoryOptionsInterface to check for mandatory options automatically
+- Added empty Module.php e.g. for modules.zendframework.com
 
 ## 1.2.0 (2014-04-29)
 

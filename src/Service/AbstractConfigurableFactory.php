@@ -49,9 +49,9 @@ abstract class AbstractConfigurableFactory implements ConfigurableInterface
                     throw new Exception\RuntimeException(sprintf(
                         'Mandatory option "%s" was not set for configuration "%s.%s.%s".',
                         $option,
-                        $this->getName(),
                         $this->getModule(),
-                        $this->getScope()
+                        $this->getScope(),
+                        $this->getName()
                     ));
                 }
             }

@@ -32,6 +32,29 @@ class MyDBALConnectionFactory extends AbstractConfigurableFactory implements Fac
     {
         // get options for doctrine.connection.orm_default
         $options = $this->getOptions($serviceLocator);
+        
+        // check if mandatory options are available
+        if (empty($options['driverClass'])) {
+            throw new Exception\RuntimeException(
+                sprintf(
+                    'Driver class was not set for configuration %s.%s.%s',
+                    $this->getModule(),
+                    $this->getScope(),
+                    $this->getName()
+                )
+            );
+        }
+
+        if (empty($options['params'])) {
+            throw new Exception\RuntimeException(
+                sprintf(
+                    'Params was not set for configuration %s.%s.%s',
+                    $this->getModule(),
+                    $this->getScope(),
+                    $this->getName()
+                )
+            );
+        }
 
         $driverClass = $options['driverClass'];
         $params = $options['params'];
@@ -71,7 +94,20 @@ use Zend\ServiceManager\ServiceLocatorInterface;
 
 class MyDBALConnectionFactory extends AbstractConfigurableFactory implements FactoryInterface, MandatoryOptionsInterface
 {
-    // same code as above
+    public function createService(ServiceLocatorInterface $serviceLocator)
+    {
+        // get options for doctrine.connection.orm_default
+        $options = $this->getOptions($serviceLocator);
+
+        // mandatory options check is automatically done by MandatoryOptionsInterface
+
+        $driverClass = $options['driverClass'];
+        $params = $options['params'];
+
+        // create your instance and set options
+
+        return $instance;
+    }
 
     /**
      * Returns a list of mandatory options which must be available
@@ -84,6 +120,21 @@ class MyDBALConnectionFactory extends AbstractConfigurableFactory implements Fac
             'driverClass',
             'params',
         );
+    }
+
+    public function getModule()
+    {
+        return 'doctrine';
+    }
+
+    public function getScope()
+    {
+        return 'connection';
+    }
+
+    public function getName()
+    {
+        return 'orm_default';
     }
 }
 ```
