@@ -144,7 +144,7 @@ It is *not necessary* to add this module to your `config/application.config.php`
 
 You can find documentation about the usages of factories at the following links:
 
- * [Configurable - Get an options class or an array of options with mandytoy](docs/Configurable.md)
+ * [Configurable - Get an options class or an array of options and with mandatory options check](docs/Configurable.md)
  * [ConstructorOptionConfig - Inject options via constructor](docs/ConstructorOptionConfig.md)
  * [OptionHydratorConfig - Inject options with a hydrator](docs/OptionHydratorConfig.md)
  * [ServiceConfig - Inject an other service to instance](docs/ServiceConfig.md)
