@@ -49,10 +49,4 @@ return array(
             'constructor' => 'bar',
         ),
     ),
-    'service_manager' => array(
-        'invokables' => array(
-            'sake_easyconfig.service.foo' => '\SakeTest\EasyConfig\Service\TestAsset\OptionConfig',
-            'sake_easyconfig.service.bar' => '\SakeTest\EasyConfig\Service\TestAsset\OptionConfig',
-        )
-    )
 );

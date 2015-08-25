@@ -1,41 +1,75 @@
 {
-    "name": "sandrokeil/easy-config",
-    "description": "Zend Framework 2 (zf2) module to retrieve specific module options and provides some abstract factories to create easily instances depending on configuration",
-    "homepage": "https://github.com/sandrokeil/EasyConfig",
-    "license": "BSD-3-Clause",
-    "type": "library",
-    "keywords": [
-        "zf2",
-        "zend framework",
-        "service manager",
-        "factory",
-        "config",
-        "service",
-        "options"
-    ],
-    "authors": [
-        {"name": "Sandro Keil", "homepage": "https://github.com/sandrokeil"}
-    ],
-    "autoload": {
-        "psr-4": {
-            "Sake\\EasyConfig\\": "src/",
-            "SakeTest\\EasyConfig\\": "test/"
-        }
-    },
-    "require": {
-        "php": "~5.3",
-        "zendframework/zend-servicemanager": "~2.2"
-    },
-    "require-dev": {
-        "zendframework/zend-test": "~2.2",
-        "zendframework/zend-config": "~2.2",
-        "zendframework/zend-form": "~2.2",
-        "zendframework/zend-serializer": "~2.2",
-        "zendframework/zend-log": "~2.2",
-        "zendframework/zend-modulemanager": "~2.2",
-        "sandrokeil/citools": "~1.0"
-    },
-    "suggest": {
-        "zendframework/zend-stdlib": "Zend\\StdLib for AbstractOptionHydratorConfigFactory"
+  "name": "sandrokeil/easy-config",
+  "description": "Zend Framework 2 (zf2) module to retrieve specific module options and provides some abstract factories to create easily instances depending on configuration",
+  "homepage": "https://github.com/sandrokeil/EasyConfig",
+  "license": "BSD-3-Clause",
+  "type": "library",
+  "keywords": [
+    "zf2",
+    "zend framework",
+    "service manager",
+    "factory",
+    "config",
+    "service",
+    "options"
+  ],
+  "authors": [
+    {
+      "name": "Sandro Keil",
+      "homepage": "https://sandro-keil.de"
     }
+  ],
+  "support": {
+    "issues": "https://github.com/sandrokeil/EasyConfig/issues",
+    "source": "https://github.com/sandrokeil/EasyConfig",
+    "docs": "https://github.com/sandrokeil/EasyConfig"
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://packages.zendframework.com/"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Sake\\EasyConfig\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "SakeTest\\EasyConfig\\": "test/"
+    }
+  },
+  "require": {
+    "php": "~5.5",
+    "container-interop/container-interop": "~1.0",
+    "zendframework/zend-servicemanager": "~2.6"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "~4.8",
+    "phpunit/php-invoker": "~1.1",
+    "squizlabs/php_codesniffer": "~2.3",
+    "zendframework/zend-stdlib": "~2.6",
+    "zendframework/zend-filter": "~2.5"
+  },
+  "suggest": {
+    "zendframework/zend-stdlib": "Zend\\StdLib for AbstractOptionHydratorConfigFactory"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "extra": {
+    "branch-alias": {
+      "dev-master": "2.0-dev",
+      "dev-develop": "2.1-dev"
+    }
+  },
+  "archive": {
+    "exclude": [
+      "test",
+      "phpunit.xml*",
+      ".travis.yml",
+      ".scrutinizer.yml",
+      ".coveralls.yml"
+    ]
+  }
 }

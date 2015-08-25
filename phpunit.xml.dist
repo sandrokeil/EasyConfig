@@ -2,7 +2,6 @@
 <!-- disable strict to debug tests -->
 <phpunit bootstrap="./test/Bootstrap.php"
          colors="true"
-         strict="true"
          convertErrorsToExceptions="true"
          convertNoticesToExceptions="true"
          convertWarningsToExceptions="true"
